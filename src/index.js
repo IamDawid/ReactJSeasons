@@ -8,17 +8,23 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
+        //this is the only exception for 'this.state ='
         this.state = { lat: null };
+
+        window.navigator.geolocation.getCurrentPosition(
+            (position) => {
+                //setState needs to be called in order to update the state!
+                this.setState({ lat: position.coords.latitude });
+            },
+            (err) => console.log(err)
+        );
+
     }
 
     //React requires render to be defined
     render() {
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => console.log(position),
-            (err) => console.log(err)
-        );
-
-        return <div>Latitude: </div>;
+       
+        return <div>Latitude: {this.state.lat}</div>;
     }
 }
 
