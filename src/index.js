@@ -16,7 +16,7 @@ class App extends React.Component {
                 //setState needs to be called in order to update the state!
                 this.setState({ lat: position.coords.latitude });
             },
-            err => {
+            (err) => {
                 this.setState({ errorMessage: err.message });
             }
         );
@@ -25,15 +25,22 @@ class App extends React.Component {
 
     //React requires render to be defined
     render() {
-       
-        return (
-            <div>
-                Latitude: {this.state.lat}
-                <br />
-                Error: {this.state.errorMessage}
-            </div>
-        );
-    }
+
+        if (this.state.errorMessage && !this.state.lat) {
+            return <div>Error: {this.state.errorMessage}</div>
+        }
+
+        if (!this.state.errorMessage && this.state.lat) {
+            return <div>Latitude: {this.state.lat}</div>
+        }
+
+        
+        return <div>Loading...</div>
+        
+
+        }
+
+    
 }
 
 ReactDOM.render(
