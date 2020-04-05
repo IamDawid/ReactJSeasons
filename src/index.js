@@ -11,18 +11,20 @@ class App extends React.Component {
         //this is the only exception for 'this.state ='
         this.state = { lat: null, errorMessage: '' };
 
+    }
+
+    componentDiDMount() {  //best place for initial data loading
+
         window.navigator.geolocation.getCurrentPosition(
-            (position) => {
-                //setState needs to be called in order to update the state!
-                this.setState({ lat: position.coords.latitude });
-            },
-            (err) => {
-                this.setState({ errorMessage: err.message });
-            }
+            position => this.setState({ lat: position.coords.latitude }),
+
+            //setState needs to be called in order to update the state!
+
+            err => this.setState({ errorMessage: err.message })
         );
 
     }
-
+  
     //React requires render to be defined
     render() {
 
