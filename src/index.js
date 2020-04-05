@@ -4,14 +4,10 @@ import ReactDOM from 'react-dom';
 
 class App extends React.Component {
 
-
-    constructor(props) {
-        super(props);
-
         //this is the only exception for 'this.state ='
-        this.state = { lat: null, errorMessage: '' };
+        //e.g this.state = { lat: null, errorMessage: '' };
 
-    }
+    state = { lat: null, errorMessage: '' };
 
     componentDiDMount() {  //best place for initial data loading
 
