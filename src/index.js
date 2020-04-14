@@ -22,9 +22,10 @@ class App extends React.Component {
         );
 
     }
-  
-    //React requires render to be defined
-    render() {
+
+    //It is recommended to create a helper function to contain conditionals and then call it inside the render() method
+
+    renderContent() {
 
         if (this.state.errorMessage && !this.state.lat) {
             return <div>Error: {this.state.errorMessage}</div>
@@ -36,11 +37,20 @@ class App extends React.Component {
 
 
         return <Spinner message="Please accept location request" />
+
+    }
+  
+    //React requires render to be defined
+    render() {
+
+        return (
+            <div>
+                {this.renderContent()}
+            </div>
+        );
         
+                }
 
-        }
-
-    
 }
 
 ReactDOM.render(
