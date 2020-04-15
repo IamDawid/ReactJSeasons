@@ -1,6 +1,6 @@
 # ReactJSeasons
 
-A small React app which checks for user's location and determines wether it's warm or cold there right now.
+A small React app which obtains user's location and determines the current (summer/winter) season based on that and the current date.
 
 ## Getting Started
 
@@ -20,9 +20,6 @@ Accepting or Denyin the location prompt in your browser will allow you to see er
 * [SemanticUI](https://semantic-ui.com/) - Styling, icons and loading spinner
 * [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) - Used to obtain user's location
 
-## Licence
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
