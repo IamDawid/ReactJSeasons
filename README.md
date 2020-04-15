@@ -11,7 +11,7 @@ Simply download or clone this project and run npm start or npm test or npm run b
 ## Testing
 
 You can override your your Geolocation in your browser's Developer's Tools to alter the result.
-Accepting or Denyin the location prompt in your browser will allow you to see error handling.
+Accepting or denying the location prompt in your browser will allow you to see error handling.
 
 
 ## Built With
