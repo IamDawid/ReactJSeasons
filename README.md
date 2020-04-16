@@ -5,7 +5,7 @@ A small React app which obtains user's location and determines the current (summ
 ## Getting Started
 
 
-Simply download or clone this project and run npm start or npm test or npm run build
+Simply download or clone this project and run npm start or npm test or npm run build then navigate to https://localhost:3000/ in your browser.
 
 
 ## Testing
